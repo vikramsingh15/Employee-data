@@ -1,0 +1,85 @@
+<%include ../partials/header.ejs%>
+
+<section class="container">
+  <h1 class="large text-primary">
+    Add new employee
+  </h1>
+
+  <small>* = required field</small>
+  <form
+    class="form"
+    action="/employee"
+    method="POST"
+    enctype="multipart/form-data"
+  >
+    <div class="form-group">
+      <input
+        type="text"
+        placeholder="* Name of employee"
+        name="name"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <select name="status" required>
+        <option value="0">*Select Professional Status</option>
+        <option value="Developer">Developer</option>
+        <option value="Junior Developer">Junior Developer</option>
+        <option value="Senior Developer">Senior Developer</option>
+        <option value="Manager">Manager</option>
+        <option value="Student or Learning">Human Reasource</option>
+        <option value="Instructor">Sales person</option>
+        <option value="Intern">Intern</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <input type="number" placeholder="age of employee" name="age" />
+    </div>
+
+    <div class="form-group">
+      <input type="text" placeholder="Phone number of employee" name="phone" />
+    </div>
+
+    <div class="form-group">
+      <input type="email" placeholder="Email of employee" name="email" />
+    </div>
+
+    <div class="form-group">
+      <input
+        type="text"
+        placeholder="*Skills of employee"
+        name="skills"
+        required
+      />
+      <small class="form-text"
+        >Please use comma separated values (eg. HTML,CSS,JavaScript,PHP)</small
+      >
+    </div>
+
+    <div class="form-group">
+      <input type="text" placeholder="adress of employee" name="location" />
+    </div>
+
+    <div>
+      <input name="image" class="btn btn-primary" type="file" />
+      <small class="form-text">Upload the image of employee</small>
+    </div>
+
+    <div class="form-group">
+      <div class="form-group">
+        <textarea
+          class="form-control"
+          name="bio"
+          placeholder="Bio of employee"
+        ></textarea>
+      </div>
+    </div>
+
+    <input type="submit" class="btn btn-primary my-1" value="Submit" />
+  </form>
+</section>
+
+<%include ../partials/footer.ejs%>

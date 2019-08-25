@@ -1,0 +1,54 @@
+<%include ../partials/header.ejs%>
+<section class="container">
+  <a href="/employee/<%=employee.id%>/edit" class="btn btn-light">
+    Update employee
+  </a>
+
+  <form
+    method="POST"
+    action="/employee/<%=employee.id%>?_method=DELETE"
+    style="display: inline;"
+  >
+    <button class="btn btn-danger">Delete employee</button>
+  </form>
+
+  <div class="profile-grid my-1">
+    <!-- Top -->
+    <div class="profile-top bg-primary p-2">
+      <img class="round-img my-1" src="<%=employee.image.secure_url%>" alt="" />
+      <h1 class="large"><%=employee.name%></h1>
+      <p class="lead"><%=employee.status%></p>
+      <p><%=employee.location%></p>
+      <%if(employee.email){%>
+       <p><i class="far fa-envelope"></i> <%=employee.email%></p>
+      <%}%>
+     
+    </div>
+  </div>
+  <!-- About -->
+  <div class="profile-about bg-light p-2">
+    <h2 class="text-primary"><%=employee.name%>'s Bio</h2>
+    <p>
+      <%=employee.bio%>
+    </p>
+    <div class="line"></div>
+    <h2 class="text-primary">Skill Set</h2>
+    <div class="skills">
+      <%employee.skills.forEach(skill=>{%>
+      <div class="p-1"><i class="fa fa-check"></i> <%=skill%></div>
+      <%})%>
+    </div>
+  </div>
+  <div class="profile-exp bg-white p-2 my-1" style="text-align:center;">
+    <h2 class="text-primary">Other details</h2>
+    <div>
+      <%if(employee.phone){%>
+      <p><strong>Phone no. : </strong><%=employee.phone%></p>
+      <%}%> <%if(employee.age){%>
+      <p><strong>age: </strong><%=employee.age%></p>
+      <%}%> 
+    </div>
+  </div>
+</section>
+
+<%include ../partials/footer.ejs%>

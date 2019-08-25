@@ -1,0 +1,110 @@
+<%include ../partials/header.ejs%>
+
+<section class="container">
+  <h1 class="large text-primary">
+    Edit details of <%=employee.name%>
+  </h1>
+
+  <small>* = required field</small>
+
+  <form
+    class="form"
+    action="/employee/<%=employee.id%>?_method=PUT"
+    method="POST"
+    enctype="multipart/form-data"
+  >
+    <div class="form-group">
+      <input
+        type="text"
+        placeholder="* Name of employee"
+        name="name"
+        value="<%=employee.name%>"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <select name="status">
+        <%if(employee.status){%>
+        <option value="0"><%=employee.status%></option>
+        <%}else{%>
+        <option value="0">*Select Professional status</option>
+        <%}%>
+        <option value="Developer">Developer</option>
+        <option value="Junior Developer">Junior Developer</option>
+        <option value="Senior Developer">Senior Developer</option>
+        <option value="Manager">Manager</option>
+        <option value="Student or Learning">H.R</option>
+        <option value="Instructor">Sales Person</option>
+        <option value="Intern">Intern</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <input
+        type="number"
+        placeholder="age of employee"
+        name="age"
+        value="<%=employee.age%>"
+      />
+    </div>
+
+    <div class="form-group">
+      <input
+        type="text"
+        placeholder="Phone number of employee"
+        name="phone"
+        value="<%=employee.phone%>"
+      />
+    </div>
+
+    <div class="form-group">
+      <input
+        type="email"
+        placeholder="Email of employee"
+        name="email"
+        value="<%=employee.email%>"
+      />
+    </div>
+
+    <div class="form-group">
+      <input
+        type="text"
+        placeholder="*Skills of employee"
+        name="skills"
+        value="<%=employee.skills%>"
+        required
+      />
+      <small class="form-text"
+        >Please use comma separated values (eg. HTML,CSS,JavaScript,PHP)</small
+      >
+    </div>
+
+    <div class="form-group">
+      <input
+        type="text"
+        placeholder="adress of employee"
+        name="location"
+        value="<%=employee.location%>"
+      />
+    </div>
+
+    <div>
+      <input name="image" class="btn btn-primary" type="file" />
+      <small class="form-text">Upload the image of employee</small>
+    </div>
+
+    <div class="form-group">
+      <div class="form-group">
+        <textarea class="form-control" name="bio" placeholder="Bio of employee">
+<%=employee.bio%></textarea
+        >
+      </div>
+    </div>
+
+    <input type="submit" class="btn btn-primary my-1" value="Submit" />
+  </form>
+</section>
+
+<%include ../partials/footer.ejs%>

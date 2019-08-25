@@ -1,0 +1,28 @@
+<%include ../partials/header.ejs%>
+<section class="container">
+  <h1 class="large text-primary">Employees</h1>
+
+  <div class="profiles">
+    <%employees.forEach(employee=>{%>
+    <div class="profile bg-light">
+      <img
+        class="round-img"
+        src="<%=employee.image.secure_url%>"
+        alt="profile"
+      />
+
+      <div>
+        <h2><%=employee.name%></h2>
+        <p><%=employee.location%></p>
+        <p><%=employee.status%></p>
+
+        <a href="/employee/<%=employee.id%>" class="btn btn-primary"
+          >View Profile</a
+        >
+      </div>
+    </div>
+    <%})%>
+  </div>
+</section>
+
+<%include ../partials/footer.ejs%>
