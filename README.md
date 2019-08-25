@@ -5,15 +5,15 @@
 
 ### create account on https://cloudinary.com/
 
-## Get cloudinary api  key and secret
+### Get cloudinary api  key and secret from above website
 
 
 ### 1) create file with name .env and paste
 CLOUDINARY_SECRET="your cloudinary secret"
 
-### 2) In (/cloudinary/index.js)
+### 2) In directory (/cloudinary/index.js) paste
 
-cloud_name: 'your cloud name',
+cloud_name: 'your cloud name' , 
 api_key: 'your cloudinary key'
 
 ### 3) In root directory paste cmd. -> npm install
