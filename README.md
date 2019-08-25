@@ -1,4 +1,4 @@
-# Receipt
+# Employee
 # Employee-data link -> (https://salty-springs-10763.herokuapp.com/employee)
 
 # Quick Start
