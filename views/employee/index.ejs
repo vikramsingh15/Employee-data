@@ -20,6 +20,12 @@
           >View Profile</a
         >
       </div>
+
+      <ul>
+        <%employee.skills.forEach(skill=>{%>
+        <li class="text-primary"><i class="fa fa-check"></i> <%=skill%></li>
+        <%})%>
+      </ul>
     </div>
     <%})%>
   </div>
